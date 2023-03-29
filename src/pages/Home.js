@@ -1,8 +1,15 @@
+import { Link } from "react-router-dom";
+
+import MainNavigation from "../components/MainNavigation";
+
 function HomePage() {
   return (
-    <div>
+    <>
       <h1>My Home Page</h1>
-    </div>
+      <p>
+        Go to <Link to="/products"> the list of products</Link>
+      </p>
+    </>
   );
 }
 
