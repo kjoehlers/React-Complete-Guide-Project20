@@ -1,14 +1,22 @@
 import { Link } from "react-router-dom";
 
-import MainNavigation from "../components/MainNavigation";
+const PRODUCTS = [
+  { id: "p1", title: "A Book" },
+  { id: "p2", title: "A Carpet" },
+  { id: "p3", title: "An Online Course" },
+];
 
 function ProductsPage() {
   return (
     <>
       <h1>The Products Page</h1>
-      <p>
-        Go to <Link to="/"> the home page.</Link>
-      </p>
+      <ul>
+        {PRODUCTS.map((product) => (
+          <li key={product.id}>
+            <Link to={`/products/${product.id}`}>{product.title}</Link>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
